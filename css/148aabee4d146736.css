@@ -1,0 +1,206 @@
+@import "onetrust_override.css";
+
+/* Local fonts */
+@font-face {
+  font-family: AppDisplay;
+  src: url(../fonts/01ac8b8d7d5f099c-s.p.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: AppText;
+  src: url(../fonts/8c3b53925983ecf3-s.p.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Optional alternates if available */
+@font-face {
+  font-family: AppText;
+  src: url(../fonts/901660bd6db481d0-s.p.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* Heading font specifically requested (901660bd6db481d0-s.p.woff2) */
+@font-face {
+  font-family: HeadingFont;
+  src: url(../fonts/901660bd6db481d0-s.p.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* Button-specific display font */
+@font-face {
+  font-family: ButtonFont;
+  src: url("../fonts/c02f06199c732d49-s.p%20%281%29.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* ✅ RESET button ليصبح مثل a */
+button.button {
+  all: unset; /* حذف كل ستايلات button الافتراضية */
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  font-size: 20px;
+  position: relative;
+  font-weight: 700;
+  font-family: ButtonFont, AppDisplay, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  border: none;
+  border-radius: 0 !important;
+  height: 68px;
+  text-shadow: 0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
+               -1px -1px #000, 1px -1px #000, 1px 0 #000, -1px 0 #000,
+               1px 1px #000, -1px 1px #000, 1px 2px #000, -1px 2px #000;
+  background: url(../images/center.png.png);
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 auto; /* center horizontally */
+  min-width: 360px;
+}
+
+button.button:before {
+  left: -10px;
+  background-image: url(../images/left.png.png);
+}
+
+button.button:after,
+button.button:before {
+  position: absolute;
+  top: 0;
+  height: 68px;
+  width: 10px;
+  background-size: 100% 100%;
+  content: "";
+}
+
+button.button:after {
+  right: -10px;
+  background-image: url(../images/right.png.png);
+}
+
+button.button span {
+  line-height: 1;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: block;
+  transform: none;
+}
+
+/* ✅ باقي CSS كما هو */
+main {
+  font-size: 18px;
+  color: #fff;
+  background-image: url(../images/background.jpg.jpg);
+  background-size: cover;
+}
+
+main .language-dropdown {
+  color: #fff !important;
+  -webkit-text-stroke-width: 0;
+  text-shadow: none !important;
+  background-color: rgba(0,0,0,.2) !important;
+  background-image: url(../images/language-globe-white.svg.svg),
+                    url(../images/language-caret-white.svg.svg) !important;
+}
+
+main .contents > a {
+  margin-top: 16px;
+}
+
+main .clicked-label {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 30px !important;
+}
+
+main .deco-section {
+  padding-top: 120px !important;
+}
+
+main .deco-section img {
+  transform: scale(1.4) translateY(-20px) !important;
+}
+
+@font-face {
+  font-family: CocJapan;
+  src: url(../../../fonts/game/jp-bold.woff2?v=ualij3q);
+  font-weight: 700;
+}
+
+html:lang(jp) button.button {
+  font-family: CocJapan, sans-serif !important;
+}
+
+@font-face {
+  font-family: CocKorea;
+  src: url(../../../fonts/game/kr-bold.woff2?v=ualij3q);
+  font-weight: 700;
+}
+
+html:lang(kr) button.button {
+  font-family: CocKorea, sans-serif !important;
+}
+
+@font-face {
+  font-family: CocChina;
+  src: url(../../../fonts/game/cn-bold.woff2?v=ualij3q);
+  font-weight: 700;
+}
+
+html:lang(cn) button.button,
+html:lang(cnt) button.button {
+  font-family: CocChina, sans-serif !important;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  max-width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  background: #f2f2f2;
+  color: #010101;
+  font-family: AppText, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Use display font for key headings to match the mock */
+main .lead-wrapper p,
+.styles_download-links-heading__XV9JX,
+.styles_logo__fO964 + .nested-content .clicked-label,
+h1, h2, h3 {
+  font-family: HeadingFont, AppDisplay, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+}
+
+html:lang(ar) .contents {
+  direction: rtl;
+}
+
+img, svg {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
